@@ -103,14 +103,14 @@
   <link name="link_5">
     <visual>
       <geometry>
-        <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_joint5.dae"/>
+        <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_joint5_rot.dae"/>
       </geometry>
       <origin rpy="0 1.57075 0" xyz=".04225 .015 0"/>
     </visual>
     <collision>
       <origin rpy="0 1.57075 0" xyz=".04225 .015 0"/>
       <geometry>
-        <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_joint5.stl"/>
+        <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_joint5_rot.stl"/>
       </geometry>
     </collision>    
   </link>
@@ -127,10 +127,10 @@
       <geometry>
         <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_gripper.dae"/>
       </geometry>
-      <origin rpy="3.14159 0 -.9773835"/>
+      <origin rpy="1.57075 -.9773835 0.0"/>
     </visual>
     <collision>
-      <origin rpy="3.14159 0 -.9773835"/>
+      <origin rpy="1.57075 -.9773835 0.0"/>
       <geometry>
         <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_gripper.stl"/>
       </geometry>
@@ -139,9 +139,9 @@
   <joint name="gripper_joint_5" type="revolute">
     <parent link="link_5"/>
     <child link="left_gripper"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 -1 0"/>
     <limit lower="0" upper="1.452906" effort="1000" velocity="0.7"/>
-    <origin rpy="0 0 0.2331650816" xyz=".04225 .015 0"/>
+    <origin rpy="0 0.2331650816 0" xyz=".04725 0 -.015"/>
   </joint>
 
   <link name="right_gripper">
@@ -149,10 +149,10 @@
       <geometry>
         <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_gripper.dae"/>
       </geometry>
-      <origin rpy="0 0 .9773835"/>
+      <origin rpy="-1.57075 .9773835 0"/>
     </visual>
     <collision>
-      <origin rpy="0 0 .9773835"/>
+      <origin rpy="-1.57075 .9773835 0"/>
       <geometry>
         <mesh filename="package://mikata_arm_description/description/meshes/mikata_arm_4_gripper.stl"/>
       </geometry>
@@ -161,9 +161,9 @@
   <joint name="right_gripper_joint" type="revolute">
     <parent link="link_5"/>
     <child link="right_gripper"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 -1 0"/>
     <limit lower="0" upper="1.452906" effort="1000" velocity="0.7"/>
-    <origin rpy="0 0 -0.2331650816" xyz=".04225 -.015 0"/>
+    <origin rpy="0 -0.2331650816 0" xyz=".04725 0 .015"/>
     <mimic joint="gripper_joint_5" multiplier="-1"/>
   </joint>
 
